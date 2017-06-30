@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Task
@@ -34,8 +34,8 @@
                                         <td>{{$task->user->name}}</td>
                                         <td>{{$task->name}}</td>
                                         <td>{{$task->description}}</td>
-                                        <td>{{$task->created_at}}</td>
-                                        <td>{{$task->updated_at}}</td>
+                                        <td>{{$task->created_at->diffForhumans()}}</td>
+                                        <td>{{$task->updated_at->diffForhumans()}}</td>
                                         <td>
                                             <a href="#" type="button" class="btn btn-warning btn-xs">Edit</a>
                                         </td>
