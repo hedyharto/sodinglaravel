@@ -20,13 +20,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+
+                            @if($tasks)
+
+                                @foreach($tasks as $task)
+                                    <tr>
+                                        <td>{{$task->user_id}}</td>
+                                        <td>{{$task->name}}</td>
+                                        <td>{{$task->description}}</td>
+                                        <td>{{$task->created_at}}</td>
+                                        <td>{{$task->updated_at}}</td>
+                                    </tr>
+                                @endforeach
+
+                            @endif
+                            
                         </tbody>
                     </table>
 

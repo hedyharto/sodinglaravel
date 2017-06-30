@@ -11,7 +11,7 @@ class TaskController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -20,6 +20,8 @@ class TaskController extends Controller
     public function index()
     {
         //
+        $tasks = Task::all();
+        return view('task', compact('tasks'));
     }
 
     /**
