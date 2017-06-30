@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Task;
 use Illuminate\Http\Request;
+use Auth;
 
 class TaskController extends Controller
 {
@@ -32,6 +33,7 @@ class TaskController extends Controller
     public function create()
     {
         //
+        return view('create');
     }
 
     /**
@@ -43,6 +45,18 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         //
+        // return $request->all();
+
+        $user = Auth::user();
+
+        $input = $request->all();
+
+        // return dd($input);
+
+        //use relation
+        $user->tasks()->create($input);
+
+        return redirect('task');
     }
 
     /**

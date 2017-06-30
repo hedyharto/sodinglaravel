@@ -5,7 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Tasks</div>
+                <div class="panel-heading">
+                    Task
+                    <a href="{{route('task.create')}}" class="btn btn-primary pull-right btn-xs">New Task</a>
+                </div>
 
                 <div class="panel-body">
                     
