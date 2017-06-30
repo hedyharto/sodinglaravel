@@ -37,7 +37,7 @@
                                         <td>{{$task->created_at->diffForhumans()}}</td>
                                         <td>{{$task->updated_at->diffForhumans()}}</td>
                                         <td>
-                                            <a href="#" type="button" class="btn btn-warning btn-xs">Edit</a>
+                                            <a href="{{route('task.edit', $task->id)}}" type="button" class="btn btn-warning btn-xs">Edit</a>
                                         </td>
                                     </tr>
                                 @endforeach

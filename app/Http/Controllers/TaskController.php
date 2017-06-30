@@ -81,9 +81,12 @@ class TaskController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit($id)
     {
         //
+        $task = Task::find($id);
+
+        return view('edit', compact('task'));
     }
 
     /**
@@ -93,9 +96,19 @@ class TaskController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, $id)
     {
         //
+        // return $request->all();
+
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        $input = $request->all();
+        Auth::user()->tasks()->whereId($id)->first()->update($input);
+        return redirect('task');
     }
 
     /**
