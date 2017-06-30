@@ -25,7 +25,7 @@
 
                                 @foreach($tasks as $task)
                                     <tr>
-                                        <td>{{$task->user_id}}</td>
+                                        <td>{{$task->user->name}}</td>
                                         <td>{{$task->name}}</td>
                                         <td>{{$task->description}}</td>
                                         <td>{{$task->created_at}}</td>
