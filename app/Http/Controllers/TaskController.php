@@ -47,6 +47,11 @@ class TaskController extends Controller
         //
         // return $request->all();
 
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
         $user = Auth::user();
 
         $input = $request->all();
